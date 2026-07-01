@@ -75,7 +75,8 @@ RUN set -eux; \
         curl \
         git \
         gnupg \
-        jq; \
+        jq \
+        openssl; \
     install -d -m 0755 /etc/apt/keyrings; \
     curl -fsSL https://packages.microsoft.com/keys/microsoft.asc \
         | gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg; \
