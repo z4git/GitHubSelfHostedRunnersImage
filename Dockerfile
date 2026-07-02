@@ -115,6 +115,7 @@ RUN set -eux; \
 COPY --chown=runner:runner start.sh ./
 RUN chmod 0755 start.sh
 
+# The runner is designed to be ephemeral, so it doesn't need to run as root.
 USER runner
 
 ENTRYPOINT ["./start.sh"]
