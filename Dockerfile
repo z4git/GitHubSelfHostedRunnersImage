@@ -26,7 +26,7 @@ ARG RUNNER_SHA256=
 # ─────────────────────────────────────────────────────────────
 # Stage 1 — fetch and extract the runner tarball
 # ─────────────────────────────────────────────────────────────
-FROM --platform=linux/amd64 ubuntu:${UBUNTU_TAG} AS runner-fetch
+FROM ubuntu:${UBUNTU_TAG} AS runner-fetch
 
 ARG RUNNER_VERSION
 ARG RUNNER_SHA256
@@ -60,7 +60,7 @@ RUN set -eux; \
 # ─────────────────────────────────────────────────────────────
 # Stage 2 — runtime image
 # ─────────────────────────────────────────────────────────────
-FROM --platform=linux/amd64 ubuntu:${UBUNTU_TAG}
+FROM ubuntu:${UBUNTU_TAG}
 
 ENV DEBIAN_FRONTEND=noninteractive \
     RUNNER_ALLOW_RUNASROOT=0 \
